@@ -1,0 +1,100 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_8",
+        "isSuccess&StateMachine_2",
+        "systemError&StateMachine_2",
+        "strConfigFile&State_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/PDFProcess.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strWorkingFolder&Sequence_1",
+        "strFile&Sequence_1",
+        "strPage&Sequence_1",
+        "strPageFile&Sequence_1",
+        "strSearchOutputFile&Sequence_1",
+        "intMonth&Sequence_1",
+        "dtmDate&Sequence_1",
+        "strPythonFolder&Sequence_1",
+        "strTesseractFile&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "strInputFolder",
+        "in_outputfile",
+        "strCaseNo",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strInputFolder&Sequence_10",
+        "strCaseNo&Flowchart_1",
+        "strOutputFile&Flowchart_1",
+        "strOutputFileTemp&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/ConvertDocToPDF.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "strWorkingFolder",
+        "strInputFolder",
+        "strPythonFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/WordProcess.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strWorkingFolder&Sequence_1",
+        "dtmDate&Sequence_1",
+        "strPythonFolder&Sequence_1",
+        "strTesseractFile&Sequence_1",
+        "intMonth&Sequence_1",
+        "strSearchOutputFile&Sequence_1",
+        "strFile&Sequence_1",
+        "strPage&Sequence_1",
+        "strPageFile&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "strInputFolder",
+        "in_Config",
+        "in_outputfile",
+        "strCaseNo"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

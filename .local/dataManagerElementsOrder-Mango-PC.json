@@ -1,0 +1,82 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_8",
+        "isSuccess&StateMachine_2",
+        "systemError&StateMachine_2",
+        "strConfigFile&State_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process/PDFProcess.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "intMonth&Sequence_1",
+        "strIncheieriText&Sequence_1",
+        "irfileToRead&Sequence_1",
+        "strCode&Sequence_1",
+        "strDate&Sequence_1",
+        "dtmDate&Sequence_1",
+        "strPythonFolder&Sequence_1",
+        "strFolderRecipise&Sequence_1",
+        "strTesseractFile&Sequence_1",
+        "arrMatches&Sequence_3",
+        "strFolder&Sequence_4",
+        "strFile&Sequence_4",
+        "strPage&Sequence_4",
+        "strPageFile&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strIncheieriFile",
+        "in_Config",
+        "in_outputfile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strOutputFile&Flowchart_1",
+        "dtInputData&Flowchart_1",
+        "strOutputFileTemp&Flowchart_1",
+        "strile&Sequence_10"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "test.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "intcac&Sequence_1",
+        "strFileOutput&Sequence_1",
+        "strFile2&Sequence_1",
+        "strFile1&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
