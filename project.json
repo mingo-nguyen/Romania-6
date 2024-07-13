@@ -1,16 +1,15 @@
 {
-  "name": "Pensie Extract Incheieri",
+  "name": "Romania-6",
   "projectId": "102ddfd8-3afa-41f7-8707-18a47c716dfc",
-  "description": "Blank Process",
+  "description": "Search Keyword in Word and PDF file, pdf file is scanned ones, then need use OCR, word files will be converted to pdf then use Fitz",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.DocumentUnderstanding.Activities": "2.3.1-preview",
     "UiPath.Excel.Activities": "[2.22.0-preview]",
     "UiPath.PDF.Activities": "[3.15.0-preview]",
     "UiPath.System.Activities": "[23.8.1-preview]",
     "UiPath.Testing.Activities": "[23.8.0-preview]",
     "UiPath.UIAutomation.Activities": "[23.6.2-preview]",
-    "UiPath.Word.Activities": "[1.19.3]"
+    "UiPath.WebAPI.Activities": "[1.21.0]"
   },
   "webServices": [],
   "entitiesStores": [],
