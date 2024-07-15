@@ -228,6 +228,25 @@
         "C:\\Users\\mingo\\.nuget\\packages\\uipath.webapi.activities.runtime\\1.21.0\\lib/net6.0-windows7.0/UiPath.Web.dll"
       ],
       "Path": "C:\\Users\\mingo\\.nuget\\packages\\uipath.webapi.activities\\1.21.0"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Word.Activities",
+        "Version": "1.19.3"
+      },
+      "Assemblies": [
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib/net6.0-windows7.0/Interop.Domino.UiPath.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib/net6.0-windows7.0/Microsoft.Office.Interop.Word.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib/net6.0-windows7.0/Office.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib/net6.0-windows7.0/UiPath.Word.Activities.Design.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib/net6.0-windows7.0/UiPath.Word.Activities.ViewModels.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib/net6.0-windows7.0/UiPath.Word.Activities.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib/net6.0-windows7.0/UiPath.Word.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\xceed.document.net\\2.0.21359.11160\\lib/net5.0/Xceed.Document.NET5.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\xceed.pdf\\2.0.21359.11160\\lib/net5.0/Xceed.PDF.NET5.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\xceed.words.net\\2.0.21359.11160\\lib/net5.0/Xceed.Words.NET5.dll"
+      ],
+      "Path": "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3"
     }
   ],
   "Conflicts": [],
@@ -4483,6 +4502,62 @@
           "Item2": "[2.1.3, )"
         }
       ]
+    },
+    "UiPath.Word.Activities": {
+      "Id": "UiPath.Word.Activities",
+      "Version": "1.19.3",
+      "Dependencies": [
+        {
+          "Item1": "System.Drawing.Common",
+          "Item2": "[5.0.3, )"
+        },
+        {
+          "Item1": "Xceed.Words.NET",
+          "Item2": "[2.0.21359.11160, )"
+        }
+      ]
+    },
+    "Xceed.Document.NET": {
+      "Id": "Xceed.Document.NET",
+      "Version": "2.0.21359.11160",
+      "Dependencies": [
+        {
+          "Item1": "Xceed.Pdf",
+          "Item2": "[2.0.21359.11160, 2.0.21359.11160]"
+        },
+        {
+          "Item1": "System.IO.Packaging",
+          "Item2": "[4.5.0, )"
+        },
+        {
+          "Item1": "System.Drawing.Common",
+          "Item2": "[5.0.2, )"
+        }
+      ]
+    },
+    "Xceed.Pdf": {
+      "Id": "Xceed.Pdf",
+      "Version": "2.0.21359.11160",
+      "Dependencies": [
+        {
+          "Item1": "System.Drawing.Common",
+          "Item2": "[5.0.2, )"
+        }
+      ]
+    },
+    "Xceed.Words.NET": {
+      "Id": "Xceed.Words.NET",
+      "Version": "2.0.21359.11160",
+      "Dependencies": [
+        {
+          "Item1": "Xceed.Document.NET",
+          "Item2": "[2.0.21359.11160, 2.0.21359.11160]"
+        },
+        {
+          "Item1": "Xceed.Pdf",
+          "Item2": "[2.0.21359.11160, 2.0.21359.11160]"
+        }
+      ]
     }
   },
   "AllPackages": [
@@ -6943,6 +7018,52 @@
         "C:\\Users\\mingo\\.nuget\\packages\\uipath.webapi.activities.runtime\\1.21.0\\lib\\net6.0-windows7.0\\UiPath.Web.dll"
       ],
       "Path": "C:\\Users\\mingo\\.nuget\\packages\\uipath.webapi.activities.runtime\\1.21.0"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Word.Activities",
+        "Version": "1.19.3"
+      },
+      "Assemblies": [
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib\\net6.0-windows7.0\\Interop.Domino.UiPath.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib\\net6.0-windows7.0\\Microsoft.Office.Interop.Word.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib\\net6.0-windows7.0\\Office.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib\\net6.0-windows7.0\\UiPath.Word.Activities.Design.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib\\net6.0-windows7.0\\UiPath.Word.Activities.ViewModels.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib\\net6.0-windows7.0\\UiPath.Word.Activities.dll",
+        "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\lib\\net6.0-windows7.0\\UiPath.Word.dll"
+      ],
+      "Path": "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3"
+    },
+    {
+      "Package": {
+        "Id": "Xceed.Document.NET",
+        "Version": "2.0.21359.11160"
+      },
+      "Assemblies": [
+        "C:\\Users\\mingo\\.nuget\\packages\\xceed.document.net\\2.0.21359.11160\\lib\\net5.0\\Xceed.Document.NET5.dll"
+      ],
+      "Path": "C:\\Users\\mingo\\.nuget\\packages\\xceed.document.net\\2.0.21359.11160"
+    },
+    {
+      "Package": {
+        "Id": "Xceed.Pdf",
+        "Version": "2.0.21359.11160"
+      },
+      "Assemblies": [
+        "C:\\Users\\mingo\\.nuget\\packages\\xceed.pdf\\2.0.21359.11160\\lib\\net5.0\\Xceed.PDF.NET5.dll"
+      ],
+      "Path": "C:\\Users\\mingo\\.nuget\\packages\\xceed.pdf\\2.0.21359.11160"
+    },
+    {
+      "Package": {
+        "Id": "Xceed.Words.NET",
+        "Version": "2.0.21359.11160"
+      },
+      "Assemblies": [
+        "C:\\Users\\mingo\\.nuget\\packages\\xceed.words.net\\2.0.21359.11160\\lib\\net5.0\\Xceed.Words.NET5.dll"
+      ],
+      "Path": "C:\\Users\\mingo\\.nuget\\packages\\xceed.words.net\\2.0.21359.11160"
     }
   ]
 }

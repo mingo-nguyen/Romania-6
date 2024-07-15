@@ -38,6 +38,7 @@
         "strTesseractFile&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "strRootFolder",
         "strInputFolder",
         "in_outputfile",
         "strCaseNo",
@@ -50,6 +51,7 @@
       "Path": "Framework/Process.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "strRootFolder&Flowchart_1",
         "strInputFolder&Sequence_10",
         "strCaseNo&Flowchart_1",
         "strOutputFile&Flowchart_1",
@@ -88,10 +90,58 @@
         "strPageFile&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "strRootFolder",
         "strInputFolder",
         "in_Config",
         "in_outputfile",
         "strCaseNo"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Common/DownloadLib.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strFolderPython&Sequence_1",
+        "strDataFolder&Sequence_1",
+        "strWorkingFolder&Sequence_1",
+        "folderExtracted&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "strRootFolder",
+        "strURLFitz",
+        "strURLOCR",
+        "strURLLib"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/ErrorHandling.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_SystemError"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Common/LogsProcess.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strFolderLocalAppData&Sequence_1",
+        "strProjectLogsFolder&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "strRootFolder",
+        "strMailSubject",
+        "strHtmlBody",
+        "AttachmentFiles",
+        "arrSendTo",
+        "senderName"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

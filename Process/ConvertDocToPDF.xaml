@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ConvertDocToPDF" this:ConvertDocToPDF.strPythonFolder="[Environment.CurrentDirectory.Replace(&quot;/&quot;,&quot;\&quot;)+&quot;\Data\DocumentProcessLib-main&quot;]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ConvertDocToPDF" this:ConvertDocToPDF.strPythonFolder="[Environment.CurrentDirectory.Replace(&quot;/&quot;,&quot;\&quot;)+&quot;\Data\DocumentProcessLib-main&quot;]" this:ConvertDocToPDF.strInputFolder="D:\OneDrive\RPA\Personal Project\Romania-6\Data\Input" this:ConvertDocToPDF.strWorkingFolder="D:\OneDrive\RPA\Personal Project\Romania-6\Data\Working" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="strPythonFolder" Type="InArgument(x:String)" />
     <x:Property Name="strInputFolder" Type="InArgument(x:String)" />
@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1883,994</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1873,1180</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ConvertDocToPDF_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -90,16 +90,28 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ConvertDocToPDF" sap:VirtualizedContainerService.HintSize="416,545" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ConvertDocToPDF" sap:VirtualizedContainerService.HintSize="416,1005" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="WINWORD">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:KillProcess>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;ConvertDocToPDF.xaml - Start&quot;]" />
-    <ui:StartProcess WorkingDirectory="{x:Null}" Arguments="[&quot;&quot;&quot;&quot;+strInputFolder+&quot;&quot;&quot;&quot;+&quot; &quot;+&quot;&quot;&quot;&quot;+strWorkingFolder+&quot;&quot;&quot;&quot;]" DisplayName="Start Process" FileName="[strPythonFolder+&quot;\convertDoctoPDF\convertDoctoPDF.exe&quot;]" sap:VirtualizedContainerService.HintSize="354,120" sap2010:WorkflowViewState.IdRef="StartProcess_1" StartType="Synchronously" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[strPythonFolder+&quot;\DocToPDFMultiThread.exe&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;&quot;&quot;&quot;+strInputFolder+&quot;&quot;&quot;&quot;+&quot; &quot;+&quot;&quot;&quot;&quot;+strWorkingFolder+&quot;&quot;&quot;&quot;+&quot; 4&quot;]" />
+    <ui:StartProcess WorkingDirectory="{x:Null}" Arguments="[&quot;&quot;&quot;&quot;+strInputFolder+&quot;&quot;&quot;&quot;+&quot; &quot;+&quot;&quot;&quot;&quot;+strWorkingFolder+&quot;&quot;&quot;&quot;+&quot; 4&quot;]" DisplayName="Start Process" FileName="[strPythonFolder+&quot;\DocToPDFMultiThread.exe&quot;]" sap:VirtualizedContainerService.HintSize="354,120" sap2010:WorkflowViewState.IdRef="StartProcess_3" StartType="Asynchronously" />
+    <ui:GetProcesses ContinueOnError="{x:Null}" Processes="{x:Null}" DisplayName="Get Processes" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="GetProcesses_1" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;ConvertDocToPDF.xaml - Finish&quot;]" />
   </Sequence>
 </Activity>

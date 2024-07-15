@@ -1,14 +1,15 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DownloadLib" this:DownloadLib.strURLLib="https://github.com/mingo-nguyen/DocumentProcessLib/archive/refs/heads/main.zip" this:DownloadLib.strURLOCR="https://github.com/mingo-nguyen/Python/raw/main/Romania-6/searchPDFusingOCR.exe" this:DownloadLib.strURLFitz="https://github.com/mingo-nguyen/Python/raw/main/Romania-6/searchPDFusingFitz_arg.exe" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadLib" this:DownloadLib.strURLLib="https://github.com/mingo-nguyen/DocumentProcessLib/archive/refs/heads/main.zip" this:DownloadLib.strURLOCR="https://github.com/mingo-nguyen/Python/raw/main/Romania-6/searchPDFusingOCR.exe" this:DownloadLib.strURLFitz="https://github.com/mingo-nguyen/Python/raw/main/Romania-6/searchPDFusingFitz_arg.exe" this:DownloadLib.strURLDocToPDF="https://github.com/mingo-nguyen/Python/raw/main/Romania-6/DocToPDFMultiThread.exe" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="strURLLib" Type="InArgument(x:String)" />
     <x:Property Name="strURLOCR" Type="InArgument(x:String)" />
     <x:Property Name="strURLFitz" Type="InArgument(x:String)" />
     <x:Property Name="strRootFolder" Type="InArgument(x:String)" />
+    <x:Property Name="strURLDocToPDF" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1883,1535</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1873,1637</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadLib_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -107,21 +108,14 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadLib" sap:VirtualizedContainerService.HintSize="512,1470" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadLib" sap:VirtualizedContainerService.HintSize="512,1572" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="si:DirectoryInfo" Name="folderExtracted" />
-      <Variable x:TypeArguments="x:String" Name="strWorkingFolder">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Environment.CurrentDirectory.Replace(&quot;/&quot;,&quot;\&quot;)+&quot;\Data\Working&quot;" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="strDataFolder">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Environment.CurrentDirectory.Replace(&quot;/&quot;,&quot;\&quot;)+&quot;\Data&quot;" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="[Environment.CurrentDirectory.Replace(&quot;/&quot;,&quot;\&quot;)+&quot;\Data\Working&quot;]" Name="strWorkingFolder" />
+      <Variable x:TypeArguments="x:String" Default="[Environment.CurrentDirectory.Replace(&quot;/&quot;,&quot;\&quot;)+&quot;\Data&quot;]" Name="strDataFolder" />
       <Variable x:TypeArguments="x:String" Name="strFolderPython" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -234,7 +228,24 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
-    <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/xml" DisplayName="FItz" EnableSSLVerification="True" EndPoint="[strURLFitz]" sap:VirtualizedContainerService.HintSize="450,93" sap2010:WorkflowViewState.IdRef="HttpClient_6" Method="GET" ResourcePath="[strFolderPython+&quot;\searchPDFusingFitz_arg.exe&quot;]" TimeoutMS="20000">
+    <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/xml" DisplayName="FItz" EnableSSLVerification="True" EndPoint="[strURLFitz]" sap:VirtualizedContainerService.HintSize="450,102" sap2010:WorkflowViewState.IdRef="HttpClient_6" Method="GET" ResourcePath="[strFolderPython+&quot;\searchPDFusingFitz_arg.exe&quot;]" TimeoutMS="20000">
+      <ui:HttpClient.Attachments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Attachments>
+      <ui:HttpClient.Cookies>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Cookies>
+      <ui:HttpClient.Headers>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Headers>
+      <ui:HttpClient.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Parameters>
+      <ui:HttpClient.UrlSegments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.UrlSegments>
+    </ui:HttpClient>
+    <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/xml" DisplayName="doctopdf" EnableSSLVerification="True" EndPoint="[strURLDocToPDF]" sap:VirtualizedContainerService.HintSize="450,93" sap2010:WorkflowViewState.IdRef="HttpClient_7" Method="GET" ResourcePath="[strFolderPython+&quot;\DocToPDFMultiThread.exe&quot;]" TimeoutMS="20000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>

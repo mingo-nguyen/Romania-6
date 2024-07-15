@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1883,4462</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1873,1180</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PDFProcess_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -126,7 +126,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PDFProcess" sap:VirtualizedContainerService.HintSize="708,4397" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PDFProcess" sap:VirtualizedContainerService.HintSize="496,594" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:DateTime" Name="dtmDate" />
       <Variable x:TypeArguments="x:String" Name="strPythonFolder">
@@ -148,15 +148,14 @@
           <Literal x:TypeArguments="x:String" Value="" />
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="x:String" Name="strWorkingFolder" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="646,173" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;PDFProcess.xaml - Start &quot;]" />
-    <Assign DisplayName="strPythonFolder" sap:VirtualizedContainerService.HintSize="646,114" sap2010:WorkflowViewState.IdRef="Assign_8">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;PDFProcess.xaml - Start &quot;]" />
+    <Assign DisplayName="strPythonFolder" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_8">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strPythonFolder]</OutArgument>
       </Assign.To>
@@ -164,7 +163,7 @@
         <InArgument x:TypeArguments="x:String">[strRootFolder+"\Data\DocumentProcessLib-main"]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="646,114" sap2010:WorkflowViewState.IdRef="Assign_14">
+    <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_14">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strTesseractFile]</OutArgument>
       </Assign.To>
@@ -172,7 +171,7 @@
         <InArgument x:TypeArguments="x:String">[strPythonFolder+"\"+strTesseractFile]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.txt" Folder="[strPythonFolder]" sap:VirtualizedContainerService.HintSize="646,481" sap2010:WorkflowViewState.IdRef="ForEachFileX_3" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.txt" Folder="[strPythonFolder]" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="ForEachFileX_3" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -193,59 +192,12 @@
       </ui:ForEachFileX.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachFileX>
-    <Assign sap:VirtualizedContainerService.HintSize="646,114" sap2010:WorkflowViewState.IdRef="Assign_45">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[strWorkingFolder]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[strRootFolder+"\Data\Working"]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:ForEachFileX DisplayName="delete working" Filter="*.pdf" Folder="[strWorkingFolder]" sap:VirtualizedContainerService.HintSize="646,481" sap2010:WorkflowViewState.IdRef="ForEachFileX_8" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
-      <ui:ForEachFileX.Body>
-        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
-          <ActivityAction.Argument1>
-            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
-          </ActivityAction.Argument1>
-          <ActivityAction.Argument2>
-            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
-          </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,191" sap2010:WorkflowViewState.IdRef="Sequence_99">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="354,103" sap2010:WorkflowViewState.IdRef="DeleteFileX_6" Path="[CurrentFile.FullName]" />
-          </Sequence>
-        </ActivityAction>
-      </ui:ForEachFileX.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:ForEachFileX>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Process\ConvertDocToPDF.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="646,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\ConvertDocToPDF.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="strPythonFolder">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPythonFolder" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="strInputFolder">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strInputFolder" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="strWorkingFolder">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strWorkingFolder" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:ForEachFileX DisplayName="PDF files" Filter="*.pdf" Folder="[strInputFolder]" sap:VirtualizedContainerService.HintSize="646,2687" sap2010:WorkflowViewState.IdRef="ForEachFileX_6" IncludeSubDirectories="True" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+    <ui:ForEachFileX DisplayName="PDF files" Filter="*.pdf" Folder="[strInputFolder]" sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="ForEachFileX_6" IncludeSubDirectories="True" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -492,7 +444,7 @@
       </ui:ForEachFileX.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>

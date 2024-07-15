@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HC5OfmZm4W5+FCkwW/uchUpBOhaXnbyBA5Zv5p896LW+kcE4GLAfJHbm8yzDoI3YRwo0m7qLZY6zqVrYBs/z/Q==",
+  "dgSpecHash": "hvafeSs9DZdxhEA8DusFllDs3QlkFnu0nm4YszYgT+jlMIIjHuDgt+aut2cSsGOuGV6wcXrl2OxeXGf1pnvE9A==",
   "success": true,
   "projectFilePath": "D:\\OneDrive\\RPA\\Personal Project\\Romania-6\\.local\\",
   "expectedPackageFiles": [
@@ -255,7 +255,11 @@
     "C:\\Users\\mingo\\.nuget\\packages\\uipath.uiautomation.activities.runtime\\23.6.2-preview\\uipath.uiautomation.activities.runtime.23.6.2-preview.nupkg.sha512",
     "C:\\Users\\mingo\\.nuget\\packages\\uipath.vision\\3.10.1\\uipath.vision.3.10.1.nupkg.sha512",
     "C:\\Users\\mingo\\.nuget\\packages\\uipath.webapi.activities\\1.21.0\\uipath.webapi.activities.1.21.0.nupkg.sha512",
-    "C:\\Users\\mingo\\.nuget\\packages\\uipath.webapi.activities.runtime\\1.21.0\\uipath.webapi.activities.runtime.1.21.0.nupkg.sha512"
+    "C:\\Users\\mingo\\.nuget\\packages\\uipath.webapi.activities.runtime\\1.21.0\\uipath.webapi.activities.runtime.1.21.0.nupkg.sha512",
+    "C:\\Users\\mingo\\.nuget\\packages\\uipath.word.activities\\1.19.3\\uipath.word.activities.1.19.3.nupkg.sha512",
+    "C:\\Users\\mingo\\.nuget\\packages\\xceed.document.net\\2.0.21359.11160\\xceed.document.net.2.0.21359.11160.nupkg.sha512",
+    "C:\\Users\\mingo\\.nuget\\packages\\xceed.pdf\\2.0.21359.11160\\xceed.pdf.2.0.21359.11160.nupkg.sha512",
+    "C:\\Users\\mingo\\.nuget\\packages\\xceed.words.net\\2.0.21359.11160\\xceed.words.net.2.0.21359.11160.nupkg.sha512"
   ],
   "logs": []
 }

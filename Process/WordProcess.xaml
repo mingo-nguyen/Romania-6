@@ -5,11 +5,12 @@
     <x:Property Name="strCaseNo" Type="InArgument(x:String)" />
     <x:Property Name="strInputFolder" Type="InArgument(x:String)" />
     <x:Property Name="strRootFolder" Type="InArgument(x:String)" />
+    <x:Property Name="intTimeOut" Type="InArgument(x:Int32)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1883,3952</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1873,3673</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>WordProcess_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -124,9 +125,10 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="WordProcess" sap:VirtualizedContainerService.HintSize="708,3887" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="WordProcess" sap:VirtualizedContainerService.HintSize="708,3608" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:DateTime" Name="dtmDate" />
       <Variable x:TypeArguments="x:String" Name="strPythonFolder">
@@ -180,7 +182,7 @@
         <InArgument x:TypeArguments="x:String">[strRootFolder+"\Data\Working"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachFileX DisplayName="delete txt" Filter="*.txt" Folder="[strPythonFolder]" sap:VirtualizedContainerService.HintSize="646,481" sap2010:WorkflowViewState.IdRef="ForEachFileX_7" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+    <ui:ForEachFileX DisplayName="delete txt" Filter="*.txt" Folder="[strPythonFolder]" sap:VirtualizedContainerService.HintSize="646,57" sap2010:WorkflowViewState.IdRef="ForEachFileX_7" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -201,11 +203,22 @@
       </ui:ForEachFileX.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachFileX>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Common\CheckProcessFinish.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="646,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Common\CheckProcessFinish.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="strProcessName">
+          <Literal x:TypeArguments="x:String">DocToPDFMultiThread</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="intTimeOut">
+          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeOut" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="isRunning" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="646,173" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;WordProcess.xaml - &quot;+Directory.GetFiles(strWorkingFolder,&quot;*.pdf&quot;).count.toString +&quot; files converted&quot;]" />
     <ui:ForEachFileX DisplayName="PDF files" Filter="*.pdf" Folder="[strWorkingFolder]" sap:VirtualizedContainerService.HintSize="646,2630" sap2010:WorkflowViewState.IdRef="ForEachFileX_6" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
